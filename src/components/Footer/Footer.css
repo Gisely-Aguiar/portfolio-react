@@ -1,0 +1,386 @@
+/* Footer.css - DESIGN ORGANIZADO E ALINHADO */
+
+.footer {
+  background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+  color: white;
+  padding: 60px 0 30px;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #3b82f6, transparent);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Parte superior do footer */
+.footer-top {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 50px;
+  margin-bottom: 40px;
+}
+
+@media (min-width: 768px) {
+  .footer-top {
+    grid-template-columns: 1fr 2fr;
+    gap: 80px;
+  }
+}
+
+/* Informações principais */
+.footer-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.footer-logo {
+  margin-bottom: 15px;
+}
+
+.footer-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: white;
+  margin-bottom: 5px;
+  letter-spacing: -0.5px;
+}
+
+.footer-subtitle {
+  font-size: 1rem;
+  color: #9ca3af;
+  font-weight: 500;
+}
+
+.footer-description {
+  color: #9ca3af;
+  line-height: 1.6;
+  font-size: 0.95rem;
+  max-width: 300px;
+}
+
+/* Grid das colunas */
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 40px;
+}
+
+@media (max-width: 767px) {
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Colunas individuais */
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.column-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 5px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.column-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background: #3b82f6;
+  border-radius: 2px;
+}
+
+/* Links */
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-link {
+  color: #d1d5db;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  display: inline-block;
+  padding: 4px 0;
+  position: relative;
+}
+
+.footer-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #3b82f6;
+  transition: width 0.3s ease;
+}
+
+.footer-link:hover {
+  color: white;
+  transform: translateX(5px);
+}
+
+.footer-link:hover::after {
+  width: 20px;
+}
+
+/* Itens de tecnologia */
+.tech-item {
+  display: inline-block;
+  background: rgba(59, 130, 246, 0.1);
+  color: #60a5fa;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin: 2px 0;
+}
+
+/* Contato */
+.footer-contact {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  color: #d1d5db;
+  font-size: 0.95rem;
+}
+
+.contact-icon {
+  color: #3b82f6;
+  font-size: 18px;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.contact-link {
+  color: #d1d5db;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-link:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+.contact-text {
+  line-height: 1.4;
+}
+
+/* Divisor */
+.footer-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  margin: 40px 0;
+}
+
+/* Parte inferior do footer */
+.footer-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .footer-bottom {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+  }
+}
+
+/* Copyright */
+.copyright {
+  color: #9ca3af;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.copyright strong {
+  color: white;
+  font-weight: 700;
+}
+
+.copyright-sub {
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin-top: 5px;
+}
+
+/* Redes sociais */
+.footer-social {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+@media (min-width: 768px) {
+  .footer-social {
+    align-items: flex-start;
+  }
+}
+
+.social-title {
+  font-size: 0.95rem;
+  color: #9ca3af;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #d1d5db;
+  font-size: 18px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+  background: #3b82f6;
+  color: white;
+  transform: translateY(-3px);
+  border-color: #3b82f6;
+  box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
+}
+
+/* Botão voltar ao topo */
+.back-to-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(59, 130, 246, 0.1);
+  color: #60a5fa;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.back-to-top:hover {
+  background: #3b82f6;
+  color: white;
+  border-color: #3b82f6;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
+}
+
+.arrow-icon {
+  transition: transform 0.3s ease;
+}
+
+.back-to-top:hover .arrow-icon {
+  transform: translateY(-2px);
+}
+
+/* Responsividade final */
+@media (max-width: 768px) {
+  .footer {
+    padding: 40px 0 20px;
+  }
+  
+  .footer-top {
+    gap: 40px;
+  }
+  
+  .footer-title {
+    font-size: 1.75rem;
+  }
+  
+  .footer-grid {
+    gap: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 15px;
+  }
+  
+  .footer-top {
+    gap: 30px;
+  }
+  
+  .footer-bottom {
+    gap: 20px;
+  }
+  
+  .social-icons {
+    gap: 10px;
+  }
+  
+  .social-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+  }
+  
+  .back-to-top {
+    padding: 8px 16px;
+    font-size: 0.85rem;
+  }
+}

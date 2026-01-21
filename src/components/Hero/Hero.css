@@ -1,0 +1,363 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 80px;
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+}
+
+.hero-container {
+  text-align: center;
+  max-width: 800px;
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #dbeafe;
+  color: #1d4ed8;
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-weight: 500;
+  margin-bottom: 40px;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #3b82f6;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 24px;
+  color: #1f2937;
+}
+
+.highlight {
+  color: #3b82f6;
+}
+
+.highlight.secondary {
+  color: #06b6d4;
+}
+
+.hero-description {
+  font-size: 1.125rem;
+  color: #6b7280;
+  line-height: 1.7;
+  margin-bottom: 40px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  margin-bottom: 48px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-icon {
+  transition: transform 0.3s;
+}
+
+.btn-primary:hover .btn-icon {
+  transform: translateX(4px);
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.social-link {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #4b5563;
+  font-size: 20px;
+  text-decoration: none;
+  transition: all 0.3s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.social-link:hover {
+  background-color: #3b82f6;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(59, 130, 246, 0.3);
+}
+
+/* Adicione ao arquivo Hero.css existente */
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+}
+
+.hero-text {
+  width: 100%;
+  text-align: center;
+}
+
+.hero-image {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.photo-container {
+  position: relative;
+  width: 280px;
+  height: 280px;
+}
+
+.profile-photo {
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  object-fit: cover;
+  border: 4px solid white;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 2;
+}
+
+.photo-frame {
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  right: -15px;
+  bottom: -15px;
+  border: 2px dashed #3b82f6;
+  border-radius: 30%;
+  z-index: 1;
+  animation: rotate 20s linear infinite;
+}
+
+/* Estilos para os links sociais - Hero.css */
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
+  position: relative;
+}
+
+.social-link {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #4b5563;
+  font-size: 22px;
+  text-decoration: none;
+  transition: all 0.3s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.social-link:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Cores específicas para cada rede */
+.social-link:nth-child(1):hover { /* GitHub */
+  background-color: #333;
+  color: white;
+}
+
+.social-link:nth-child(2):hover { /* LinkedIn */
+  background-color: #0077B5;
+  color: white;
+}
+
+.social-link:nth-child(3):hover { /* Email */
+  background-color: #EA4335;
+  color: white;
+}
+
+/* Tooltip (texto que aparece ao passar o mouse) */
+.social-tooltip {
+  position: absolute;
+  bottom: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s;
+  z-index: 10;
+}
+
+.social-tooltip::after {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 0 5px 5px 5px;
+  border-style: solid;
+  border-color: transparent transparent #333 transparent;
+}
+
+.social-link:hover .social-tooltip {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .social-links {
+    gap: 15px;
+  }
+  
+  .social-link {
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+  }
+}
+
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.tech-badge {
+  position: absolute;
+  padding: 8px 16px;
+  background: white;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 3;
+  animation: float 3s ease-in-out infinite;
+}
+
+.tech-badge.python {
+  top: -20px;
+  right: -20px;
+  background: linear-gradient(135deg, #3776AB, #4B8BBE);
+  color: white;
+  animation-delay: 0s;
+}
+
+.tech-badge.vue {
+  bottom: 30px;
+  left: -30px;
+  background: linear-gradient(135deg, #4FC08D, #35495E);
+  color: white;
+  animation-delay: 1s;
+}
+
+.tech-badge.mysql {
+  bottom: -15px;
+  right: -10px;
+  background: linear-gradient(135deg, #4479A1, #005C84);
+  color: white;
+  animation-delay: 2s;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  color: #6b7280;
+  margin-bottom: 24px;
+  font-weight: 400;
+}
+
+/* Responsivo */
+@media (min-width: 768px) {
+  .hero-content {
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+  }
+  
+  .hero-text {
+    width: 55%;
+    text-align: left;
+  }
+  
+  .hero-image {
+    width: 45%;
+  }
+  
+  .photo-container {
+    width: 320px;
+    height: 320px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .photo-container {
+    width: 380px;
+    height: 380px;
+  }
+}
+
+/* Responsivo */
+@media (min-width: 768px) {
+  .hero-title {
+    font-size: 3.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .btn {
+    width: 100%;
+    max-width: 300px;
+  }
+}
