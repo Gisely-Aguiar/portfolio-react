@@ -1,7 +1,7 @@
-/* Skills.css - VERSÃO DEFINITIVA COM CENTRALIZAÇÃO PERFEITA */
+/* Skills.css - VERSÃO DEFINITIVA COM CENTRALIZAÇÃO PERFEITA E MODO ESCURO */
 
 .skills-section {
-  background-color: #f9fafb;
+  background-color: var(--bg-secondary);
   padding: 80px 0;
   text-align: center;
 }
@@ -16,15 +16,15 @@
 .section-title {
   font-size: 2.5rem;
   margin-bottom: 20px;
-  color: #1f2937;
+  color: var(--text-primary);
 }
 
 .highlight {
-  color: #3b82f6;
+  color: var(--primary);
 }
 
 .section-subtitle {
-  color: #6b7280;
+  color: var(--text-secondary);
   max-width: 600px;
   margin: 0 auto 50px;
   font-size: 1.1rem;
@@ -54,20 +54,20 @@
 
 /* Card de categoria */
 .skill-card {
-  background: white;
+  background: var(--bg-card);
   border-radius: 16px;
   padding: 30px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--shadow);
   width: 100%;
   max-width: 280px;
   text-align: center;
   transition: all 0.3s ease;
-  border: 1px solid #f1f5f9;
+  border: 1px solid var(--border-color);
 }
 
 .skill-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  box-shadow: var(--shadow-hover);
 }
 
 /* Cabeçalho do card */
@@ -79,7 +79,7 @@
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #3b82f6, #06b6d4);
+  background: linear-gradient(135deg, var(--primary), var(--accent));
   color: white;
   display: flex;
   align-items: center;
@@ -91,7 +91,7 @@
 .skill-category-title {
   font-size: 1.25rem;
   font-weight: 700;
-  color: #1f2937;
+  color: var(--text-primary);
 }
 
 /* Lista de habilidades */
@@ -108,7 +108,7 @@
   justify-content: center;
   gap: 10px;
   padding: 12px 20px;
-  background: #f8fafc;
+  background: var(--hover-bg);
   border-radius: 10px;
   width: 100%;
   max-width: 240px;
@@ -116,18 +116,18 @@
 }
 
 .skill-item:hover {
-  background: #e0f2fe;
+  background: rgba(59, 130, 246, 0.1);
   transform: translateX(3px);
 }
 
 .skill-icon {
   font-size: 20px;
-  color: #3b82f6;
+  color: var(--primary);
 }
 
 .skill-name {
   font-weight: 500;
-  color: #4b5563;
+  color: var(--text-secondary);
   font-size: 0.95rem;
 }
 
@@ -141,15 +141,15 @@
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 40px;
-  color: #1f2937;
+  color: var(--text-primary);
 }
 
 /* FLEXBOX para centralização perfeita */
 .tech-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; /* Centraliza horizontalmente */
-  align-items: center; /* Centraliza verticalmente */
+  justify-content: center;
+  align-items: center;
   gap: 30px;
   max-width: 1000px;
   margin: 0 auto;
@@ -174,12 +174,15 @@
   justify-content: center;
   margin-bottom: 10px;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  box-shadow: var(--shadow);
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
 }
 
 .tech-icon-container:hover {
   transform: scale(1.1);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--primary);
 }
 
 .tech-icon {
@@ -191,7 +194,7 @@
 
 .tech-name {
   font-size: 0.9rem;
-  color: #6b7280;
+  color: var(--text-secondary);
   font-weight: 500;
   text-align: center;
   width: 100%;
@@ -238,4 +241,22 @@
   .tech-name {
     font-size: 0.8rem;
   }
+}
+
+/* Skills.css - ADICIONE NO FINAL DO ARQUIVO */
+
+:root[class="dark"] .skill-category-title,
+:root[class="dark"] .skill-name,
+:root[class="dark"] .tech-name,
+:root[class="dark"] .tech-stack-title {
+  color: var(--text-primary) !important; /* BRANCO */
+}
+
+:root[class="dark"] .section-title,
+:root[class="dark"] .section-subtitle {
+  color: var(--text-primary) !important;
+}
+
+:root[class="dark"] .highlight {
+  color: var(--primary) !important;
 }

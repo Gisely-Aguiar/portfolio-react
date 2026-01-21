@@ -1,9 +1,11 @@
+/* Hero.css - COM MODO ESCURO */
+
 .hero {
   min-height: 100vh;
   display: flex;
   align-items: center;
   padding-top: 80px;
-  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+  background: var(--bg-secondary);
 }
 
 .hero-container {
@@ -15,8 +17,8 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background-color: #dbeafe;
-  color: #1d4ed8;
+  background-color: rgba(59, 130, 246, 0.1);
+  color: var(--primary);
   padding: 8px 16px;
   border-radius: 50px;
   font-weight: 500;
@@ -26,7 +28,7 @@
 .status-dot {
   width: 8px;
   height: 8px;
-  background-color: #3b82f6;
+  background-color: var(--primary);
   border-radius: 50%;
   animation: pulse 2s infinite;
 }
@@ -41,20 +43,20 @@
   font-weight: 800;
   line-height: 1.2;
   margin-bottom: 24px;
-  color: #1f2937;
+  color: var(--text-primary);
 }
 
 .highlight {
-  color: #3b82f6;
+  color: var(--primary);
 }
 
 .highlight.secondary {
-  color: #06b6d4;
+  color: var(--accent);
 }
 
 .hero-description {
   font-size: 1.125rem;
-  color: #6b7280;
+  color: var(--text-secondary);
   line-height: 1.7;
   margin-bottom: 40px;
   max-width: 600px;
@@ -95,26 +97,25 @@
   width: 48px;
   height: 48px;
   border-radius: 12px;
-  background-color: white;
+  background-color: var(--bg-card);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #4b5563;
+  color: var(--text-secondary);
   font-size: 20px;
   text-decoration: none;
   transition: all 0.3s;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow);
 }
 
 .social-link:hover {
-  background-color: #3b82f6;
+  background-color: var(--primary);
   color: white;
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(59, 130, 246, 0.3);
+  box-shadow: var(--shadow-hover);
 }
 
-/* Adicione ao arquivo Hero.css existente */
-
+/* Conteúdo do hero */
 .hero-content {
   display: flex;
   flex-direction: column;
@@ -144,8 +145,8 @@
   height: 100%;
   border-radius: 100%;
   object-fit: cover;
-  border: 4px solid white;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  border: 4px solid var(--bg-card);
+  box-shadow: var(--shadow-hover);
   position: relative;
   z-index: 2;
 }
@@ -156,14 +157,13 @@
   left: -15px;
   right: -15px;
   bottom: -15px;
-  border: 2px dashed #3b82f6;
+  border: 2px dashed var(--primary);
   border-radius: 30%;
   z-index: 1;
   animation: rotate 20s linear infinite;
 }
 
-/* Estilos para os links sociais - Hero.css */
-
+/* Estilos para os links sociais */
 .social-links {
   display: flex;
   justify-content: center;
@@ -177,20 +177,20 @@
   width: 50px;
   height: 50px;
   border-radius: 12px;
-  background-color: white;
+  background-color: var(--bg-card);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #4b5563;
+  color: var(--text-secondary);
   font-size: 22px;
   text-decoration: none;
   transition: all 0.3s;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow);
 }
 
 .social-link:hover {
   transform: translateY(-3px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: var(--shadow-hover);
 }
 
 /* Cores específicas para cada rede */
@@ -209,14 +209,14 @@
   color: white;
 }
 
-/* Tooltip (texto que aparece ao passar o mouse) */
+/* Tooltip */
 .social-tooltip {
   position: absolute;
   bottom: -35px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: #333;
-  color: white;
+  background-color: var(--text-primary);
+  color: var(--bg-primary);
   padding: 4px 8px;
   border-radius: 4px;
   font-size: 0.75rem;
@@ -235,7 +235,7 @@
   transform: translateX(-50%);
   border-width: 0 5px 5px 5px;
   border-style: solid;
-  border-color: transparent transparent #333 transparent;
+  border-color: transparent transparent var(--text-primary) transparent;
 }
 
 .social-link:hover .social-tooltip {
@@ -264,11 +264,11 @@
 .tech-badge {
   position: absolute;
   padding: 8px 16px;
-  background: white;
+  background: var(--bg-card);
   border-radius: 50px;
   font-weight: 600;
   font-size: 0.875rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow);
   z-index: 3;
   animation: float 3s ease-in-out infinite;
 }
@@ -304,7 +304,7 @@
 
 .hero-subtitle {
   font-size: 1.5rem;
-  color: #6b7280;
+  color: var(--text-secondary);
   margin-bottom: 24px;
   font-weight: 400;
 }

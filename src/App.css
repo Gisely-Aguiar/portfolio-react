@@ -1,3 +1,72 @@
+/* src/App.css - ADICIONE NO TOPO DO ARQUIVO */
+
+:root {
+  /* Cores modo claro */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f9fafb;
+  --bg-card: #ffffff;
+  --text-primary: #1f2937;
+  --text-secondary: #6b7280;
+  --text-muted: #9ca3af;
+  --border-color: #e5e7eb;
+  --hover-bg: #f3f4f6;
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  --shadow-hover: 0 12px 30px rgba(0, 0, 0, 0.15);
+  
+  /* Cores específicas */
+  --primary: #3b82f6;
+  --primary-hover: #2563eb;
+  --accent: #06b6d4;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+}
+
+/* App.css - ATUALIZE ESTA PARTE: */
+
+:root[class="dark"] {
+  /* Cores modo escuro - ATUALIZE AS CORES DE TEXTO: */
+  --bg-primary: #111827;
+  --bg-secondary: #1f2937;
+  --bg-card: #1f2937;
+  
+  /* ❌ ANTES (cinza claro): */
+  /* --text-primary: #f9fafb; */
+  /* --text-secondary: #d1d5db; */
+  
+  /* ✅ DEPOIS (mais branco/visível): */
+  --text-primary: #ffffff;       /* BRANCO PURO */
+  --text-secondary: #e5e7eb;     /* CINZA MUITO CLARO */
+  --text-muted: #9ca3af;
+  
+  --border-color: #374151;
+  --hover-bg: #374151;
+  
+  /* Mantém cores primárias */
+  --primary: #3b82f6;
+  --primary-hover: #60a5fa;
+  --accent: #06b6d4;
+  --success: #10b981;
+  --warning: #f59e0b;
+}
+
+/* Aplica transição suave */
+* {
+  transition: background-color 0.3s ease, 
+              border-color 0.3s ease, 
+              color 0.3s ease,
+              box-shadow 0.3s ease;
+}
+
+/* Aplica cores ao body */
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+
 /* RESET E ESTILOS GLOBAIS */
 * {
   margin: 0;
@@ -78,4 +147,35 @@ body {
 .btn-secondary:hover {
   background-color: #3b82f6;
   color: white;
+}
+
+/* App.css - adicione no final */
+
+:root[class="dark"] .project-card {
+  background-color: var(--bg-card) !important;
+  border-color: var(--border-color) !important;
+  color: var(--text-primary) !important;
+}
+
+:root[class="dark"] .projects-section {
+  background-color: var(--bg-secondary) !important;
+}
+
+:root[class="dark"] .project-title {
+  color: var(--text-primary) !important;
+}
+
+:root[class="dark"] .project-description {
+  color: var(--text-secondary) !important;
+}
+
+:root[class="dark"] .github-link {
+  background-color: var(--hover-bg) !important;
+  color: var(--text-secondary) !important;
+  border-color: var(--border-color) !important;
+}
+
+:root[class="dark"] .github-link:hover {
+  background-color: var(--text-primary) !important;
+  color: var(--bg-primary) !important;
 }

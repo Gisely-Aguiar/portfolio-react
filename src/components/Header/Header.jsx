@@ -1,14 +1,15 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import './Header.css'
 import { FiMenu, FiX, FiCode, FiHome, FiUser, FiStar, FiBriefcase, FiMail } from 'react-icons/fi'
+import ThemeToggle from '../ThemeToggle/ThemeToggle'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
   const [activeSection, setActiveSection] = useState('home')
 
-  // SEÇÕES NA ORDEM CORRETA DO PORTFÓLIO
-  const navItems = [
+  // SEÇÕES NA ORDEM CORRETA DO PORTFÓLIO - Agora com useMemo
+  const navItems = useMemo(() => [
     { 
       name: 'Início', 
       href: '#home',
@@ -34,7 +35,7 @@ const Header = () => {
       href: '#contact',
       icon: <FiMail />
     }
-  ]
+  ], []) // Array de dependências vazio = só cria uma vez
 
   // Detecta qual seção está ativa ao scroll
   useEffect(() => {
@@ -59,7 +60,7 @@ const Header = () => {
 
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
-  }, )
+  }, [navItems]) // Agora navItems é estável
 
   return (
     <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
@@ -73,26 +74,32 @@ const Header = () => {
           </div>
         </div>
 
-        {/* Navegação Desktop - COM TODAS AS SEÇÕES */}
-        <nav className="nav-desktop">
-          {navItems.map((item) => (
-            <a 
-              key={item.name} 
-              href={item.href}
-              className={`nav-link ${activeSection === item.href.substring(1) ? 'active' : ''}`}
-              onClick={() => {
-                setIsMenuOpen(false)
-                setActiveSection(item.href.substring(1))
-              }}
-            >
-              <span className="nav-link-content">
-                <span className="nav-icon">{item.icon}</span>
-                <span className="nav-link-text">{item.name}</span>
-              </span>
-              <span className="nav-link-underline"></span>
-            </a>
-          ))}
-        </nav>
+        {/* Área da Direita (Navegação + Toggle) */}
+        <div className="nav-right">
+          {/* Navegação Desktop - COM TODAS AS SEÇÕES */}
+          <nav className="nav-desktop">
+            {navItems.map((item) => (
+              <a 
+                key={item.name} 
+                href={item.href}
+                className={`nav-link ${activeSection === item.href.substring(1) ? 'active' : ''}`}
+                onClick={() => {
+                  setIsMenuOpen(false)
+                  setActiveSection(item.href.substring(1))
+                }}
+              >
+                <span className="nav-link-content">
+                  <span className="nav-icon">{item.icon}</span>
+                  <span className="nav-link-text">{item.name}</span>
+                </span>
+                <span className="nav-link-underline"></span>
+              </a>
+            ))}
+          </nav>
+
+          {/* Botão Toggle do Tema */}
+          <ThemeToggle />
+        </div>
 
         {/* Botão Mobile */}
         <button 
@@ -136,7 +143,10 @@ const Header = () => {
             ))}
           </div>
 
-          
+          {/* Toggle do Tema no Mobile */}
+          <div className="mobile-theme-toggle">
+            <ThemeToggle />
+          </div>
         </div>
       </div>
     </header>

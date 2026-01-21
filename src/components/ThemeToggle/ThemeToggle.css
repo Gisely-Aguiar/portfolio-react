@@ -1,0 +1,129 @@
+.theme-toggle-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  color: inherit;
+}
+
+.theme-toggle:hover {
+  background-color: var(--hover-bg);
+}
+
+.toggle-track {
+  width: 50px;
+  height: 26px;
+  background: linear-gradient(90deg, #3b82f6, #06b6d4);
+  border-radius: 50px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.toggle-thumb {
+  position: absolute;
+  top: 3px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.toggle-thumb.light {
+  transform: translateX(3px);
+}
+
+.toggle-thumb.dark {
+  transform: translateX(27px);
+}
+
+.toggle-icon {
+  font-size: 12px;
+  color: #3b82f6;
+}
+
+/* Texto embaixo - varia com o tema */
+.toggle-label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: color 0.3s ease;
+  text-align: center;
+  width: 100%;
+}
+
+/* Modo claro - texto cinza escuro */
+:root:not([class="dark"]) .toggle-label {
+  color: var(--text-secondary);
+}
+
+/* Modo escuro - texto cinza claro */
+:root[class="dark"] .toggle-label {
+  color: var(--text-secondary);
+}
+
+/* Modo escuro - track com cores diferentes */
+:root[class="dark"] .toggle-track {
+  background: linear-gradient(90deg, #8b5cf6, #06b6d4);
+}
+
+/* Hover do texto */
+.theme-toggle-container:hover .toggle-label {
+  color: var(--text-primary);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .theme-toggle-container {
+    gap: 4px;
+  }
+  
+  .theme-toggle {
+    padding: 6px;
+  }
+  
+  .toggle-track {
+    width: 45px;
+    height: 24px;
+  }
+  
+  .toggle-thumb {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .toggle-thumb.dark {
+    transform: translateX(25px);
+  }
+  
+  .toggle-label {
+    font-size: 0.7rem;
+  }
+}
+
+/* Para mobile no header (se quiser compacto) */
+@media (max-width: 1024px) {
+  .nav-right .toggle-label {
+    display: none;
+  }
+  
+  .mobile-theme-toggle .toggle-label {
+    display: block;
+  }
+}

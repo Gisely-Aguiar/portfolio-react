@@ -56,17 +56,17 @@ const Skills = () => {
   ]
 
   const techStack = [
-    { name: 'Python', icon: <SiPython />, color: '#3776AB' },
-    { name: 'Vue.js', icon: <SiVuedotjs />, color: '#4FC08D' },
-    { name: 'JavaScript', icon: <SiJavascript />, color: '#F7DF1E' },
-    { name: 'MySQL', icon: <SiMysql />, color: '#4479A1' },
-    { name: 'Git', icon: <SiGit />, color: '#F05032' },
-    { name: 'HTML5', icon: <SiHtml5 />, color: '#E34F26' },
-    { name: 'CSS3', icon: <SiCss3 />, color: '#1572B6' },
-    { name: 'React', icon: <SiReact />, color: '#61DAFB' },
-    { name: 'Node.js', icon: <SiNodedotjs />, color: '#339933' },
-    { name: 'Tailwind', icon: <SiTailwindcss />, color: '#06B6D4' },
-    { name: 'Quasar', icon: <SiQuasar />, color: '#1976D2' }
+    { name: 'Python', icon: <SiPython /> },
+    { name: 'Vue.js', icon: <SiVuedotjs /> },
+    { name: 'JavaScript', icon: <SiJavascript /> },
+    { name: 'MySQL', icon: <SiMysql /> },
+    { name: 'Git', icon: <SiGit /> },
+    { name: 'HTML5', icon: <SiHtml5 /> },
+    { name: 'CSS3', icon: <SiCss3 /> },
+    { name: 'React', icon: <SiReact /> },
+    { name: 'Node.js', icon: <SiNodedotjs /> },
+    { name: 'Tailwind', icon: <SiTailwindcss /> },
+    { name: 'Quasar', icon: <SiQuasar /> }
   ]
 
   return (
@@ -98,27 +98,20 @@ const Skills = () => {
           ))}
         </div>
 
-        {/* Stack Tecnológico - parte final do Skills.jsx */}
-<div className="tech-stack">
-  <h3 className="tech-stack-title">Stack Tecnológico</h3>
-  <div className="tech-container"> {/* Mude para tech-container */}
-    {techStack.map((tech) => (
-      <div key={tech.name} className="tech-item">
-        <div 
-          className="tech-icon-container"
-          style={{ backgroundColor: `${tech.color}15` }}
-        >
-          <div 
-            className="tech-icon"
-            style={{ color: tech.color }}
-          >
-            {tech.icon}
-          </div>
-        </div>
-        <span className="tech-name">{tech.name}</span>
-      </div>
-    ))}
-  
+        {/* Stack Tecnológico */}
+        <div className="tech-stack">
+          <h3 className="tech-stack-title">Stack Tecnológico</h3>
+          <div className="tech-container">
+            {techStack.map((tech) => (
+              <div key={tech.name} className="tech-item">
+                <div className="tech-icon-container">
+                  <div className="tech-icon">
+                    {tech.icon}
+                  </div>
+                </div>
+                <span className="tech-name">{tech.name}</span>
+              </div>
+            ))}
           </div>
         </div>
       </div>

@@ -1,0 +1,33 @@
+/* DarkModeOverride.css - CRIE ESTE ARQUIVO */
+
+:root[class="dark"] {
+  /* Garante que tudo tenha cores escuras */
+  background-color: var(--bg-primary) !important;
+  color: var(--text-primary) !important;
+}
+
+:root[class="dark"] .academic-section,
+:root[class="dark"] .skills-section,
+:root[class="dark"] .contact-section,
+:root[class="dark"] .projects-section {
+  background-color: var(--bg-primary) !important;
+}
+
+:root[class="dark"] .skill-card,
+:root[class="dark"] .timeline-content,
+:root[class="dark"] .contact-detail-item,
+:root[class="dark"] .contact-form-container,
+:root[class="dark"] .project-card {
+  background-color: var(--bg-card) !important;
+  border-color: var(--border-color) !important;
+  color: var(--text-primary) !important;
+}
+
+:root[class="dark"] .item-description,
+:root[class="dark"] .skill-name,
+:root[class="dark"] .project-description,
+:root[class="dark"] .detail-text,
+:root[class="dark"] .form-input,
+:root[class="dark"] .form-textarea {
+  color: var(--text-secondary) !important;
+}

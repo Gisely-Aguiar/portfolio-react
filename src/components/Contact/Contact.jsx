@@ -15,13 +15,11 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault()
     
-    // Envia email via mailto (funciona em todos os navegadores)
     const mailtoLink = `mailto:aguiargisely05@gmail.com?subject=${encodeURIComponent(formData.subject || 'Contato do Portfólio')}&body=${encodeURIComponent(`Nome: ${formData.name}%0D%0AEmail: ${formData.email}%0D%0A%0D%0AMensagem:%0D%0A${formData.message}`)}`
     
     window.location.href = mailtoLink
     setIsSubmitted(true)
     
-    // Reseta o formulário após 3 segundos
     setTimeout(() => {
       setFormData({ name: '', email: '', subject: '', message: '' })
       setIsSubmitted(false)

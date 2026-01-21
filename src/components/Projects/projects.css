@@ -1,7 +1,7 @@
-/* Projects.css - CARDS UNIFORMES E BEM AJUSTADOS */
+/* Projects.css - CARDS UNIFORMES E BEM AJUSTADOS COM MODO ESCURO */
 
 .projects-section {
-  background-color: #f9fafb;
+  background-color: var(--bg-secondary);
   padding: 80px 0;
   position: relative;
 }
@@ -16,16 +16,16 @@
 .section-title {
   font-size: 2.5rem;
   margin-bottom: 20px;
-  color: #1f2937;
+  color: var(--text-primary);
   text-align: center;
 }
 
 .highlight {
-  color: #3b82f6;
+  color: var(--primary);
 }
 
 .section-subtitle {
-  color: #6b7280;
+  color: var(--text-secondary);
   max-width: 600px;
   margin: 0 auto 50px;
   font-size: 1.1rem;
@@ -41,13 +41,13 @@
 
 /* Card de projeto - ALTURA FIXA E UNIFORME */
 .project-card {
-  background-color: white;
+  background-color: var(--bg-card);
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--shadow);
   transition: all 0.3s ease;
-  border: 1px solid #f1f5f9;
-  height: 480px; /* ALTURA FIXA PARA TODOS */
+  border: 1px solid var(--border-color);
+  height: 480px;
   display: flex;
   flex-direction: column;
   margin: 10px;
@@ -55,8 +55,8 @@
 
 .project-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
-  border-color: #e0f2fe;
+  box-shadow: var(--shadow-hover);
+  border-color: var(--primary);
 }
 
 /* Imagem do projeto */
@@ -99,7 +99,7 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  min-height: 0; /* IMPORTANTE para flexbox */
+  min-height: 0;
   overflow: hidden;
 }
 
@@ -114,8 +114,8 @@
 
 .tech-tag {
   padding: 4px 10px;
-  background-color: #e0f2fe;
-  color: #0369a1;
+  background-color: rgba(59, 130, 246, 0.1);
+  color: var(--primary);
   border-radius: 20px;
   font-size: 0.7rem;
   font-weight: 500;
@@ -124,13 +124,12 @@
 
 /* Título - FONTE MENOR */
 .project-title {
-  font-size: 1.1rem; /* Reduzido */
+  font-size: 1.1rem;
   font-weight: 700;
   margin-bottom: 10px;
-  color: #1f2937;
+  color: var(--text-primary);
   line-height: 1.3;
   display: -webkit-box;
-  /* -webkit-line-clamp: 2; Limita a 2 linhas */
   -webkit-box-orient: vertical;
   overflow: hidden;
   flex-shrink: 0;
@@ -138,14 +137,13 @@
 
 /* Descrição - FONTE BEM MENOR para caber mais texto */
 .project-description {
-  color: #6b7280;
+  color: var(--text-secondary);
   line-height: 1.5;
   margin-bottom: 20px;
-  font-size: 0.82rem; /* BEM menor */
+  font-size: 0.82rem;
   flex: 1;
   overflow: hidden;
   display: -webkit-box;
-  /* -webkit-line-clamp: 4; Mostra mais linhas */
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -154,7 +152,7 @@
 .project-links {
   display: flex;
   gap: 10px;
-  margin-top: auto; /* Empurra para baixo */
+  margin-top: auto;
   flex-shrink: 0;
 }
 
@@ -166,7 +164,7 @@
   padding: 10px 16px;
   border-radius: 8px;
   text-decoration: none;
-  font-size: 0.82rem; /* Menor também */
+  font-size: 0.82rem;
   font-weight: 500;
   transition: all 0.3s;
   flex: 1;
@@ -175,26 +173,26 @@
 }
 
 .github-link {
-  background-color: #f3f4f6;
-  color: #4b5563;
-  border: 1px solid #e5e7eb;
+  background-color: var(--hover-bg);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
 }
 
 .github-link:hover {
-  background-color: #1f2937;
-  color: white;
-  border-color: #1f2937;
+  background-color: var(--text-primary);
+  color: var(--bg-primary);
+  border-color: var(--text-primary);
 }
 
 .demo-link {
-  background-color: #3b82f6;
+  background-color: var(--primary);
   color: white;
-  border: 1px solid #3b82f6;
+  border: 1px solid var(--primary);
 }
 
 .demo-link:hover {
-  background-color: #2563eb;
-  border-color: #2563eb;
+  background-color: var(--primary-hover);
+  border-color: var(--primary-hover);
 }
 
 .link-icon {
@@ -215,12 +213,12 @@
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background-color: white;
-  border: 1px solid #e5e7eb;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #4b5563;
+  color: var(--text-secondary);
   font-size: 20px;
   cursor: pointer;
   transition: all 0.3s;
@@ -230,9 +228,9 @@
 
 .swiper-button-prev:hover,
 .swiper-button-next:hover {
-  background-color: #3b82f6;
+  background-color: var(--primary);
   color: white;
-  border-color: #3b82f6;
+  border-color: var(--primary);
   transform: scale(1.1);
 }
 
@@ -252,13 +250,13 @@
 .swiper-pagination-bullet {
   width: 10px;
   height: 10px;
-  background-color: #cbd5e1;
+  background-color: var(--border-color);
   opacity: 1;
   transition: all 0.3s;
 }
 
 .swiper-pagination-bullet-active {
-  background-color: #3b82f6;
+  background-color: var(--primary);
   transform: scale(1.2);
 }
 
@@ -274,7 +272,6 @@
   
   .project-description {
     font-size: 0.8rem;
-    /* -webkit-line-clamp: 3; */
   }
 }
 
@@ -305,7 +302,6 @@
   
   .project-description {
     font-size: 0.78rem;
-    /* -webkit-line-clamp: 3; */
   }
 }
 
@@ -328,7 +324,6 @@
   
   .project-description {
     font-size: 0.75rem;
-    /* -webkit-line-clamp: 3; */
   }
   
   .project-links {

@@ -1,22 +1,22 @@
-/* Header.css - ATUALIZADO */
+/* Header.css - ATUALIZADO COM VARIÁVEIS */
 
 .header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.97);
+  background-color: var(--bg-primary);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(229, 231, 235, 0.3);
+  border-bottom: 1px solid var(--border-color);
   z-index: 1000;
   transition: all 0.3s ease;
   padding: 15px 0;
 }
 
 .header.scrolled {
-  background-color: rgba(255, 255, 255, 0.99);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  background-color: var(--bg-primary);
+  box-shadow: var(--shadow);
   padding: 12px 0;
 }
 
@@ -47,8 +47,8 @@
 
 .logo-icon {
   font-size: 28px;
-  color: #3b82f6;
-  background: linear-gradient(135deg, #3b82f6, #06b6d4);
+  color: var(--primary);
+  background: linear-gradient(135deg, var(--primary), var(--accent));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -68,13 +68,13 @@
 .logo-name {
   font-size: 22px;
   font-weight: 800;
-  color: #1f2937;
+  color: var(--text-primary);
   letter-spacing: -0.5px;
 }
 
 .logo-subtitle {
   font-size: 11px;
-  color: #6b7280;
+  color: var(--text-secondary);
   font-weight: 500;
   letter-spacing: 0.5px;
 }
@@ -83,10 +83,10 @@
 .nav-desktop {
   display: none;
   gap: 5px;
-  background: rgba(249, 250, 251, 0.8);
+  background: var(--hover-bg);
   padding: 8px;
   border-radius: 12px;
-  border: 1px solid rgba(229, 231, 235, 0.5);
+  border: 1px solid var(--border-color);
 }
 
 @media (min-width: 1024px) {
@@ -98,7 +98,7 @@
 .nav-link {
   position: relative;
   text-decoration: none;
-  color: #6b7280;
+  color: var(--text-secondary);
   font-weight: 600;
   font-size: 14px;
   padding: 10px 16px;
@@ -111,12 +111,12 @@
 }
 
 .nav-link:hover {
-  color: #3b82f6;
+  color: var(--primary);
   background: rgba(59, 130, 246, 0.05);
 }
 
 .nav-link.active {
-  color: #3b82f6;
+  color: var(--primary);
   background: rgba(59, 130, 246, 0.1);
 }
 
@@ -146,7 +146,7 @@
   transform: translateX(-50%);
   width: 0;
   height: 2px;
-  background: linear-gradient(90deg, #3b82f6, #06b6d4);
+  background: linear-gradient(90deg, var(--primary), var(--accent));
   border-radius: 1px;
   transition: width 0.3s ease;
 }
@@ -161,7 +161,7 @@
   background: none;
   border: none;
   font-size: 24px;
-  color: #4b5563;
+  color: var(--text-secondary);
   cursor: pointer;
   padding: 8px;
   border-radius: 8px;
@@ -174,8 +174,8 @@
 }
 
 .menu-toggle:hover {
-  background-color: #f3f4f6;
-  color: #3b82f6;
+  background-color: var(--hover-bg);
+  color: var(--primary);
 }
 
 @media (min-width: 1024px) {
@@ -191,7 +191,7 @@
   left: 0;
   width: 100%;
   height: 100vh;
-  background-color: rgba(255, 255, 255, 0.98);
+  background-color: var(--bg-card);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   z-index: 999;
@@ -214,7 +214,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 25px 20px;
-  border-bottom: 1px solid #f1f5f9;
+  border-bottom: 1px solid var(--border-color);
 }
 
 .mobile-logo {
@@ -223,18 +223,18 @@
   gap: 10px;
   font-size: 22px;
   font-weight: 700;
-  color: #1f2937;
+  color: var(--text-primary);
 }
 
 .mobile-logo svg {
-  color: #3b82f6;
+  color: var(--primary);
 }
 
 .mobile-close {
   background: none;
   border: none;
   font-size: 28px;
-  color: #4b5563;
+  color: var(--text-secondary);
   cursor: pointer;
   padding: 8px;
   border-radius: 8px;
@@ -242,8 +242,8 @@
 }
 
 .mobile-close:hover {
-  background-color: #f3f4f6;
-  color: #3b82f6;
+  background-color: var(--hover-bg);
+  color: var(--primary);
 }
 
 .mobile-menu-content {
@@ -261,7 +261,7 @@
   gap: 15px;
   padding: 16px 20px;
   text-decoration: none;
-  color: #4b5563;
+  color: var(--text-secondary);
   font-size: 18px;
   font-weight: 600;
   border-radius: 12px;
@@ -270,16 +270,16 @@
 }
 
 .mobile-nav-link:hover {
-  background-color: #f8fafc;
-  color: #3b82f6;
-  border-color: #e0f2fe;
+  background-color: var(--hover-bg);
+  color: var(--primary);
+  border-color: var(--border-color);
   transform: translateX(10px);
 }
 
 .mobile-nav-link.active {
-  background-color: #e0f2fe;
-  color: #3b82f6;
-  border-color: #bae6fd;
+  background-color: rgba(59, 130, 246, 0.1);
+  color: var(--primary);
+  border-color: rgba(59, 130, 246, 0.2);
 }
 
 .mobile-nav-icon {
@@ -292,18 +292,42 @@
 
 .mobile-menu-footer {
   padding: 20px;
-  border-top: 1px solid #f1f5f9;
+  border-top: 1px solid var(--border-color);
   text-align: center;
 }
 
 .mobile-status {
-  color: #10b981;
+  color: var(--success);
   font-size: 14px;
   font-weight: 600;
   padding: 8px 16px;
-  background: #d1fae5;
+  background: rgba(16, 185, 129, 0.1);
   border-radius: 20px;
   display: inline-block;
+}
+
+/* Área da direita */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+/* Ajuste para mobile */
+@media (max-width: 1024px) {
+  .nav-right {
+    gap: 20px;
+  }
+  
+  .theme-toggle .toggle-label {
+    display: none;
+  }
+}
+
+/* Toggle no mobile */
+.mobile-theme-toggle {
+  margin: 20px auto;
+  width: 90%;
 }
 
 /* Responsividade */
